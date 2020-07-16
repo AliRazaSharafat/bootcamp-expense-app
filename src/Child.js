@@ -12,13 +12,14 @@ function Child() {
             alert('Please enter correct value')
             return false;
         }
+        
         addTransaction({
             amount: Number(newAmount),
             desc: newDesc
         })
     }
 
-    
+
 
     const getIncome = () => {
         let income = 0;
