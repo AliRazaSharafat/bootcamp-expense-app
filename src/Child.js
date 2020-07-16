@@ -18,6 +18,8 @@ function Child() {
         })
     }
 
+    
+
     const getIncome = () => {
         let income = 0;
         for (var i = 0; i < transactions.length; i++) {
