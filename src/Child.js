@@ -8,11 +8,11 @@ function Child() {
 
     const handleAddition = (event) => {
         event.preventDefault();
-        if (Number(newAmount) == 0) {
+        if (Number(newAmount) === 0) {
             alert('Please enter correct value')
             return false;
         }
-        
+
         addTransaction({
             amount: Number(newAmount),
             desc: newDesc
@@ -65,7 +65,7 @@ function Child() {
                 {transactions.map((transObj, ind) => {
                     return (<li key={ind}>
                         <span>{transObj.desc}</span>
-                        <span>{transObj.amount}</span>
+                        <span>${transObj.amount}</span>
                     </li>
                     )
                 }
@@ -84,8 +84,10 @@ function Child() {
                 <br></br>
                 <label>
                     Amount<br />
-                    <input type='number' value={newAmount} placeholder='Enter Amount' onChange={(ev) => setAmount(ev.target.value)} required />
                 </label>
+                Positive value for deposit money and negative value for expenses
+                    <input type='number' value={newAmount} placeholder='Enter Amount' onChange={(ev) => setAmount(ev.target.value)} required />
+                
                 <br />
                 <input type='submit' id='submit' value='Add Transaction' />
             </form>
